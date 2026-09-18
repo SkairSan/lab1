@@ -1,0 +1,18 @@
+{
+    "name": "vladm/php",
+    "autoload": {
+        "psr-4": {
+            "Skair\\Php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Skair",
+            "email": "skairsun@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.13.6",
+        "phpstan/phpstan": "^2.2"
+    }
+}
