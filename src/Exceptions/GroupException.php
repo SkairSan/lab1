@@ -8,4 +8,9 @@ class GroupException extends \Exception
     {
         return new self("Group name can't be empty");
     }
+
+    public static function emptyGroup(): self
+    {
+        return new self("Group can't be empty");
+    }
 }
