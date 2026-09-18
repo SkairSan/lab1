@@ -37,22 +37,19 @@ class Group
 
     public function addStudent(Student $student): void
     {
-        $students[] = $student;
+        $this->students[] = $student;
     }
 
     public function getGroupAverage(): float
     {
-        $sum = 0;
-        $counter = 0;
-        $result = 0;
-
-        foreach ($this->students as $s) {
-            $sum += $s->getAverage();
-            $counter++;
+        if (empty($this->students)) {
+            return 0.0;
         }
-
-        $result = $sum / $counter;
-        return $result;
+        $sum = 0.0;
+        foreach ($this->students as $student) {
+            $sum += $student->getAverage();
+        }
+        return $sum / count($this->students);
     }
 
     public function getBestStudent(): Student

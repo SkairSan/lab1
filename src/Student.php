@@ -48,16 +48,9 @@ class Student
 
     public function getAverage(): float
     {
-        $sum = 0;
-        $counter = 0;
-        $result = 0;
-
-        foreach ($this->grades as $g) {
-            $sum += $g;
-            $counter++;
+        if (empty($this->grades)) {
+            return 0.0;
         }
-
-        $result = $sum / $counter;
-        return $result;
+        return array_sum($this->grades) / count($this->grades);
     }
 }

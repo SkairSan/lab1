@@ -45,7 +45,6 @@ class GroupTest extends TestCase
         $strong = new Student('Ivan', 'Ivanov', [5, 5]);
         $group->addStudent($weak);
         $group->addStudent($strong);
-
         $this->assertSame($strong, $group->getBestStudent());
     }
 }
