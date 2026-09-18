@@ -13,12 +13,16 @@ class Student
 
     public function __construct(string $firstName, string $lastName, array $grades = [])
     {
+        if ($firstName === "" || $lastName === ""){
+            throw StudentException::emptyName();
+        }
         $this->firstName = $firstName;
         $this->lastName = $lastName;
 
+
         foreach ($grades as $g){
             if ($g < 2 || $g > 5){
-                return;
+                throw StudentException::invalidGrade($g, $this->getFullName());
             }
         }
 
@@ -33,7 +37,7 @@ class Student
     public function addGrade(int $grade) : void
     {
         if ($grade < 2 || $grade > 5){
-            throw new StudentException();
+            throw StudentException::invalidGrade($grade, $this->getFullName());
         }
 
         $this->grades[] = $grade;

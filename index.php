@@ -11,20 +11,20 @@ use Skair\Php\Exceptions\StudentException;
 
 $printStudentInfo = function (Student $student) : void
 {
-    echo "Name: " . $student->getFullname() . " Avarage grade: " . $student->getAverage() . "\n";
+    echo "Name: " . $student->getFullname() . " || " . "Average grade: " . $student->getAverage() . "\n";
 };
 
 $printGroupInfo = function (Group $group) : void
 {
     echo "Name: " . $group->getName() . "\n"
     . "Number of students: " . count($group->getStudents()) . "\n" 
-    . "Avarage grade: " . $group->getGroupAverage() . "\n";
+    . "Average grade: " . $group->getGroupAverage() . "\n";
 };
 
 
 
 
-$student1 = new Student("Ivan", "Ivanov", [1,3]); //will not add grades cuz there's 1
+$student1 = new Student("Ivan", "Ivanov", [2,3]);
 $student2 = new Student("Sergey", "Sergeev", [3, 3, 4]);
 $student3 = new Student("Kirill", "Kirillov");
 

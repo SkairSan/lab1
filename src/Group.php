@@ -1,7 +1,7 @@
 <?php
 
 namespace Skair\Php;
-use Skair\Php\Exceptions\StudentException;
+use Skair\Php\Exceptions\GroupException;
 
 class Group
 {
@@ -10,6 +10,9 @@ class Group
 
     public function __construct(string $groupName, array $students = [])
     {
+        if ($groupName === ""){
+            throw GroupException::emptyName();
+        }
         $this->groupName = $groupName;
         $this->students = $students;
     }
