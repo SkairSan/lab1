@@ -17,8 +17,8 @@ $printStudentInfo = function (Student $student) : void
 $printGroupInfo = function (Group $group) : void
 {
     echo "Name: " . $group->getName() . "\n"
-    . " Number of students: " . count($group->getStudents()) . "\n" 
-    . " Avarage grade: " . $group->getGroupAverage() . "\n";
+    . "Number of students: " . count($group->getStudents()) . "\n" 
+    . "Avarage grade: " . $group->getGroupAverage() . "\n";
 };
 
 

@@ -35,7 +35,7 @@ class Group
         $result = 0;
 
         foreach ($this->students as $s){
-            $sum += $s->getAvarage();
+            $sum += $s->getAverage();
             $counter++;
         }
 
@@ -48,10 +48,10 @@ class Group
         $bestStudent = 0;
 
         foreach ($this->students as $s){
-            $avarage = $s->getAvarage();
-            $bestResult = $bestStudent->getAvarage();
+            $average = $s->getAverage();
+            $bestResult = $bestStudent->getAverage();
 
-            if ($avarage > $bestResult){
+            if ($average > $bestResult){
                 $bestStudent = $s;
             }
         }
